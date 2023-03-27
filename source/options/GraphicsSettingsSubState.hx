@@ -81,6 +81,16 @@ class GraphicsSettingsSubState extends BaseOptionsMenu
 			['Time Left', 'Time Elapsed', 'Song Name', 'Disabled']);
 		addOption(option);
 		
+		#if !mobile
+		var option:Option = new Option('FPS Counter',
+			'If unchecked, hides FPS Counter.',
+			'showFPS',
+			'bool',
+			true);
+		addOption(option);
+		option.onChange = onChangeFPSCounter;
+		#end
+		
 		var option:Option = new Option('Auto Pause',
 			"If Checked It Will Actually Enable Ghost Tapping",
 			'ghostTapping',
