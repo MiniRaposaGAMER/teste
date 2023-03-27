@@ -44,7 +44,7 @@ class OptionsState extends MusicBeatState
 				openSubState(new options.VisualsUISubState());
 			case 'Exit':
 			        FlxG.sound.play(Paths.sound('cancelMenu'));
-			        MusicBeatState.switchState(new MainMenuState());
+			        MusicBeatState.switchState(new FreeplayState());
 		}
 	}
 
