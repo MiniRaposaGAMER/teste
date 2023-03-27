@@ -132,4 +132,11 @@ class GraphicsSettingsSubState extends BaseOptionsMenu
 			FlxG.updateFramerate = ClientPrefs.framerate;
 		}
 	}
+	#if !mobile
+	function onChangeFPSCounter()
+	{
+		if(Main.fpsVar != null)
+			Main.fpsVar.visible = ClientPrefs.showFPS;
+	}
+	#end
 }
