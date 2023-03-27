@@ -41,7 +41,8 @@ class OptionsState extends MusicBeatState
 			case 'Preferences':
 				openSubState(new options.GraphicsSettingsSubState());
 			case 'Logout':
-				openSubState(new options.VisualsUISubState());
+			        FlxG.sound.play(Paths.sound('cancelMenu'));
+			        MusicBeatState.switchState(new FreeplayState());
 			case 'Exit':
 			        FlxG.sound.play(Paths.sound('cancelMenu'));
 			        MusicBeatState.switchState(new FreeplayState());
