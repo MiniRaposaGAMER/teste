@@ -37,27 +37,32 @@ class GraphicsSettingsSubState extends BaseOptionsMenu
 		rpcTitle = 'Graphics Settings Menu'; //for Discord Rich Presence
 
 		//I'd suggest using "Low Quality" as an example for making your own option since it is the simplest here
-		var option:Option = new Option('Low Quality', //Name
+		var option:Option = new Option('Naughtyness', //Name
 			'If checked, disables some background details,\ndecreases loading times and improves performance.', //Description
 			'lowQuality', //Save data variable name
 			'bool', //Variable type
 			false); //Default value
 		addOption(option);
-
-		var option:Option = new Option('Anti-Aliasing',
-			'If unchecked, disables anti-aliasing, increases performance\nat the cost of sharper visuals.',
-			'globalAntialiasing',
+		
+		var option:Option = new Option('Downscroll', //Name
+			'If checked, notes go Down instead of Up, simple enough.', //Description
+			'downScroll', //Save data variable name
+			'bool', //Variable type
+			false); //Default value
+		addOption(option);
+		
+		var option:Option = new Option('Flashing Menu',
+			"Uncheck this if you're sensitive to flashing lights!",
+			'flashing',
 			'bool',
 			true);
-		option.showBoyfriend = true;
-		option.onChange = onChangeAntiAliasing; //Changing onChange is only needed if you want to make a special interaction after it changes the value
 		addOption(option);
 
-		var option:Option = new Option('Shaders', //Name
-			'If unchecked, disables shaders.\nIt\'s used for some visual effects, and also CPU intensive for weaker PCs.', //Description
-			'shaders', //Save data variable name
-			'bool', //Variable type
-			true); //Default value
+		var option:Option = new Option('Camera Zooming On Beat',
+			"If unchecked, the camera won't zoom in on a beat hit.",
+			'camZooms',
+			'bool',
+			true);
 		addOption(option);
 
 		#if !html5 //Apparently other framerates isn't correctly supported on Browser? Probably it has some V-Sync shit enabled by default, idk
@@ -66,6 +71,21 @@ class GraphicsSettingsSubState extends BaseOptionsMenu
 			'framerate',
 			'int',
 			60);
+		addOption(option);
+		
+		var option:Option = new Option('Time Bar:',
+			"What should the Time Bar display?",
+			'timeBarType',
+			'string',
+			'Time Left',
+			['Time Left', 'Time Elapsed', 'Song Name', 'Disabled']);
+		addOption(option);
+		
+		var option:Option = new Option('Auto Pause',
+			"This is Actually Ghost Tapping",
+			'ghostTapping',
+			'bool',
+			true);
 		addOption(option);
 
 		option.minValue = 60;
