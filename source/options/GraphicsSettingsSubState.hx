@@ -38,28 +38,28 @@ class GraphicsSettingsSubState extends BaseOptionsMenu
 
 		//I'd suggest using "Low Quality" as an example for making your own option since it is the simplest here
 		var option:Option = new Option('Naughtyness', //Name
-			'If checked, disables some background details,\ndecreases loading times and improves performance.', //Description
+			'If Checked, Enables Naughtyness', //Description
 			'lowQuality', //Save data variable name
 			'bool', //Variable type
 			false); //Default value
 		addOption(option);
 		
 		var option:Option = new Option('Downscroll', //Name
-			'If checked, notes go Down instead of Up, simple enough.', //Description
+			'If Checked Makes your Game Down Scroll.', //Description
 			'downScroll', //Save data variable name
 			'bool', //Variable type
 			false); //Default value
 		addOption(option);
 		
 		var option:Option = new Option('Flashing Menu',
-			"Uncheck this if you're sensitive to flashing lights!",
+			"If Checked it Will Enable Flashing Lights",
 			'flashing',
 			'bool',
 			true);
 		addOption(option);
 
 		var option:Option = new Option('Camera Zooming On Beat',
-			"If unchecked, the camera won't zoom in on a beat hit.",
+			"If Checked the camera will zoom on beat hit.",
 			'camZooms',
 			'bool',
 			true);
@@ -67,7 +67,7 @@ class GraphicsSettingsSubState extends BaseOptionsMenu
 
 		#if !html5 //Apparently other framerates isn't correctly supported on Browser? Probably it has some V-Sync shit enabled by default, idk
 		var option:Option = new Option('Framerate',
-			"Pretty self explanatory, isn't it?",
+			"The Max FPS",
 			'framerate',
 			'int',
 			60);
@@ -82,7 +82,7 @@ class GraphicsSettingsSubState extends BaseOptionsMenu
 		addOption(option);
 		
 		var option:Option = new Option('Auto Pause',
-			"This is Actually Ghost Tapping",
+			"If Checked It Will Actually Enable Ghost Tapping",
 			'ghostTapping',
 			'bool',
 			true);
