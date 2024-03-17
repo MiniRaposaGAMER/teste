@@ -35,7 +35,7 @@ jobs:
           sudo apt-get install libvlccore-dev
           haxelib setup ~/haxelib
           haxelib remove flixel
-          haxelib install flixel 5.5.0
+          haxelib install flixel 4.11.0
           haxelib install hxcpp > /dev/null --quiet
           haxelib install hmm --quiet
           haxelib run hmm install
@@ -63,7 +63,7 @@ jobs:
         run: |
           haxelib setup C:/haxelib
           haxelib remove flixel
-          haxelib install flixel 5.5.0
+          haxelib install flixel 4.11.0
           haxelib install hxcpp > /dev/null --quiet
           haxelib install hmm --quiet
           haxelib run hmm install
@@ -92,7 +92,7 @@ jobs:
         run: |
           haxelib setup ~/haxelib
           haxelib remove flixel
-          haxelib install flixel 5.5.0
+          haxelib install flixel 4.11.0
           haxelib install hxcpp > /dev/null --quiet
           haxelib install hmm --quiet
           haxelib run hmm install
