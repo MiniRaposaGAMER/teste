@@ -34,8 +34,6 @@ jobs:
           sudo apt-get install libvlc-dev
           sudo apt-get install libvlccore-dev
           haxelib setup ~/haxelib
-          haxelib remove flixel-addons
-          haxelib install flixel-addons 2.11.0
           haxelib remove flixel-ui
           haxelib install flixel-ui 2.4.0
           haxelib install hxcpp > /dev/null --quiet
@@ -64,8 +62,6 @@ jobs:
       - name: Install Haxelib
         run: |
           haxelib setup C:/haxelib
-          haxelib remove flixel-addons
-          haxelib install flixel-addons 2.11.0
           haxelib remove flixel-ui
           haxelib install flixel-ui 2.4.0
           haxelib install hxcpp > /dev/null --quiet
@@ -95,8 +91,6 @@ jobs:
       - name: Install Haxelib
         run: |
           haxelib setup ~/haxelib
-          haxelib remove flixel-addons
-          haxelib install flixel-addons 2.11.0
           haxelib remove flixel-ui
           haxelib install flixel-ui 2.4.0
           haxelib install hxcpp > /dev/null --quiet
