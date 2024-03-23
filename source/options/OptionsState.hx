@@ -45,7 +45,7 @@ class OptionsState extends MusicBeatState
 			        MusicBeatState.switchState(new FreeplayState());
 			case 'Exit':
 			        FlxG.sound.play(Paths.sound('cancelMenu'));
-			        MusicBeatState.switchState(new FreeplayState());
+			        MusicBeatState.switchState(new TitleState());
 		}
 	}
 

@@ -91,8 +91,8 @@ class GraphicsSettingsSubState extends BaseOptionsMenu
 		option.onChange = onChangeFPSCounter;
 		#end
 		
-		var option:Option = new Option('Auto Pause',
-			"If Checked It Will Actually Enable Ghost Tapping",
+		var option:Option = new Option('Ghost Tapping oOoOoOoOoOoO',
+			"Enable Ghost Tapping",
 			'ghostTapping',
 			'bool',
 			true);
