@@ -73,23 +73,33 @@ class GraphicsSettingsSubState extends BaseOptionsMenu
 			60);
 		addOption(option);
 		
-		var option:Option = new Option('Time Bar:',
-			"What should the Time Bar display?",
-			'timeBarType',
-			'string',
-			'Time Left',
-			['Time Left', 'Time Elapsed', 'Song Name', 'Disabled']);
-		addOption(option);
-		
-		#if !mobile
-		var option:Option = new Option('FPS Counter',
-			'If unchecked, hides FPS Counter.',
-			'showFPS',
+		var option:Option = new Option('Anti-Aliasing',
+			'If unchecked, disables anti-aliasing, increases performance\nat the cost of sharper visuals.',
+			'globalAntialiasing',
 			'bool',
 			true);
+		option.showBoyfriend = true;
+		option.onChange = onChangeAntiAliasing; //Changing onChange is only needed if you want to make a special interaction after it changes the value
 		addOption(option);
-		option.onChange = onChangeFPSCounter;
-		#end
+
+		var option:Option = new Option('Hide HUD',
+			'If checked, hides most HUD elements.',
+			'hideHud',
+			'bool',
+			false);
+		addOption(option);
+		
+		var option:Option = new Option('Health Bar Transparency',
+			'How much transparent should the health bar and icons be.',
+			'healthBarAlpha',
+			'percent',
+			1);
+		option.scrollSpeed = 1.6;
+		option.minValue = 0.0;
+		option.maxValue = 1;
+		option.changeValue = 0.1;
+		option.decimals = 1;
+		addOption(option);
 		
 		var option:Option = new Option('Ghost Tapping oOoOoOoOoOoO',
 			"Enable Ghost Tapping",
