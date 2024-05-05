@@ -50,6 +50,17 @@ class FreeplayState extends MusicBeatState
 	var intendedColor:Int;
 	var colorTween:FlxTween;
 
+	public static var bgPaths:Array<String> = 
+	[
+		'freeplaychar/char1',
+		'freeplaychar/char2',
+		'freeplaychar/char3',
+		'freeplaychar/char4',
+		'freeplaychar/char5',
+		'freeplaychar/char6',
+		'freeplaychar/char7'
+	];
+
 	override function create()
 	{
 		//Paths.clearStoredMemory();
@@ -105,6 +116,13 @@ class FreeplayState extends MusicBeatState
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
 		add(bg);
 		bg.screenCenter();
+
+		var char:FlxSprite = new FlxSprite(-80).loadGraphic(randomizeBG());
+		char.scrollFactor.set(0, 0);
+		char.updateHitbox();
+		char.screenCenter();
+		char.antialiasing = ClientPrefs.globalAntialiasing;
+		add(char);
 
 		grpSongs = new FlxTypedGroup<Alphabet>();
 		add(grpSongs);
@@ -392,6 +410,12 @@ class FreeplayState extends MusicBeatState
 		PlayState.storyDifficulty = curDifficulty;
 		diffText.text = '< ' + CoolUtil.difficultyString() + ' >';
 		positionHighscore();
+	}
+
+	public static function randomizeBG():flixel.system.FlxAssets.FlxGraphicAsset
+	{
+		var chance:Int = FlxG.random.int(0, bgPaths.length - 1);
+		return Paths.image(bgPaths[chance]);
 	}
 
 	function changeSelection(change:Int = 0, playSound:Bool = true)
